@@ -10,7 +10,7 @@ module.exports = {
   routes: [
     {
       method: "GET",
-      path: "/redemptions-clean",
+      path: "/redemptions-items",
       handler: "redemption.find",
       config: {
         policies: [],
