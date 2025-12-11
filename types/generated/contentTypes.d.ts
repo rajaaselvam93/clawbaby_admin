@@ -452,6 +452,10 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    redemptions: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::redemption.redemption'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -474,7 +478,7 @@ export interface ApiRedemptionRedemption extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    Category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    Category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     Coins: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
