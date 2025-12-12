@@ -21,7 +21,7 @@ jobs:
           script: |
             export NVM_DIR="$HOME/.nvm"
             source "$NVM_DIR/nvm.sh"
-            nvm use 22.14.0
+            nvm use 20.19.5
 
             echo "📌 Entering Strapi directory"
             cd /home/ubuntu/clawbaby_admin
